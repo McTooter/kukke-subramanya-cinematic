@@ -616,3 +616,208 @@ button {
   cursor: pointer;
   pointer-events: auto;
 }
+
+
+/* Mobile composition: preserve the cinematic layers without desktop-scale overflow. */
+@media (max-width: 700px) {
+  .stage {
+    min-height: 560px;
+  }
+
+  .site-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 18px 14px;
+    padding: 22px 18px 0;
+  }
+
+  .site-logo {
+    font-size: 18px;
+  }
+
+  .language-switcher {
+    font-size: 13px;
+  }
+
+  .site-nav {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-content: space-between;
+    gap: 10px;
+    min-width: 0;
+    padding-bottom: 4px;
+  }
+
+  .site-nav a {
+    min-width: 0;
+    font-size: 12px;
+    letter-spacing: 0.02em;
+  }
+
+  .hero-title {
+    top: clamp(138px, 20vh, 178px);
+    width: calc(100vw - 24px);
+    font-size: clamp(3.2rem, 13.1vw, 5.75rem);
+    line-height: 0.84;
+    letter-spacing: -0.055em;
+    overflow-wrap: anywhere;
+  }
+
+  .bridge-img {
+    bottom: 1vh;
+    width: min(92vw, 620px);
+  }
+
+  .splitframe-img {
+    width: min(142vw, 760px);
+    bottom: -1vh;
+  }
+
+  .frame-two-img {
+    width: min(148vw, 760px);
+  }
+
+  .intro-copy {
+    bottom: clamp(34px, 21vh, 190px);
+    width: calc(100vw - 32px);
+  }
+
+  .intro-copy p {
+    max-width: 340px;
+    font-size: 0.94rem;
+    line-height: 1.22;
+  }
+
+  .hero-tags {
+    gap: 8px;
+    margin-top: 18px;
+  }
+
+  .hero-tags span {
+    min-height: 38px;
+    padding: 0 16px;
+    font-size: 0.78rem;
+  }
+
+  .story-panel {
+    width: calc(100vw - 34px);
+  }
+
+  .story-panel h2 {
+    font-size: clamp(3rem, 12.5vw, 4.25rem);
+    line-height: 0.9;
+    text-wrap: balance;
+  }
+
+  .story-panel p {
+    width: min(340px, 100%);
+    margin-top: 18px;
+    font-size: 0.94rem;
+    line-height: 1.25;
+  }
+
+  .story-panel-bridge {
+    top: 56%;
+  }
+
+  .story-panel-bazaar {
+    top: 34%;
+  }
+
+  .facts {
+    gap: 24px;
+    width: min(330px, 100%);
+    margin-top: 38px;
+  }
+
+  .facts dt {
+    font-size: clamp(2.8rem, 11vw, 4rem);
+  }
+
+  .facts dd {
+    margin-top: 12px;
+    font-size: 0.8rem;
+  }
+
+  .note-button {
+    width: min(100%, 320px);
+    min-height: 54px;
+    margin-top: 22px;
+    padding: 0 18px;
+    font-size: 0.94rem;
+  }
+
+  .sights-slider {
+    top: var(--sights-top);
+  }
+
+  .sight-card {
+    flex-basis: calc(100vw - 40px);
+    height: 190px;
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  .sight-kicker {
+    margin-bottom: 44px;
+    font-size: 10px;
+  }
+
+  .sight-pin {
+    top: 20px;
+    right: 20px;
+    width: 56px;
+    height: 56px;
+  }
+
+  .sight-card h3 {
+    left: 20px;
+    right: 20px;
+    bottom: calc(20px + (14px * 1.2 * 2) + 10px);
+    max-width: calc(100% - 64px);
+    font-size: 20px;
+  }
+
+  .sight-card p {
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .sights-controls {
+    left: 20px;
+    top: calc(var(--sights-screen-top) + 190px + 14px);
+    gap: 10px;
+  }
+
+  .sight-nav {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+@media (max-width: 380px) {
+  .site-header {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .site-nav a {
+    font-size: 11px;
+  }
+
+  .hero-title {
+    font-size: clamp(3rem, 12.8vw, 5.4rem);
+  }
+
+  .intro-copy {
+    width: calc(100vw - 24px);
+  }
+
+  .hero-tags span {
+    padding: 0 12px;
+    font-size: 0.73rem;
+  }
+}
